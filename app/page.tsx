@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase, isSupabaseConfigured } from "@/lib/supabaseClient";
 
 interface Course {
   id: string;
@@ -15,37 +15,49 @@ export default function Home() {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const { data, error } = await supabase.storage.from("pdfs").list("");
-
-      if (error) {
-        console.error("Error fetching files:", error.message);
-        // Show sample courses if no files available
+      // Check if Supabase is configured
+      if (!isSupabaseConfigured()) {
+        console.log("Supabase not configured, showing sample courses");
         setCourses(sampleCourses);
         return;
       }
 
-      // Convert PDF files to courses
-      const courseList = data.map((file, index) => {
-        const { data: urlData } = supabase.storage
-          .from("pdfs")
-          .getPublicUrl(file.name);
+      try {
+        const { data, error } = await supabase.storage.from("pdfs").list("");
 
-        return {
-          id: `course-${index}`,
-          name: file.name
-            .replace(".pdf", "")
-            .replace(/[-_]/g, " ")
-            .replace(/\b\w/g, (l) => l.toUpperCase()),
-          description: `Learn about ${file.name
-            .replace(".pdf", "")
-            .replace(/[-_]/g, " ")
-            .toLowerCase()} with this comprehensive course material.`,
-          pdfUrl: urlData.publicUrl,
-        };
-      });
+        if (error) {
+          console.error("Error fetching files:", error.message);
+          // Show sample courses if error occurs
+          setCourses(sampleCourses);
+          return;
+        }
 
-      // If no files, show sample courses
-      setCourses(courseList.length > 0 ? courseList : sampleCourses);
+        // Convert PDF files to courses
+        const courseList = data.map((file: any, index: number) => {
+          const { data: urlData } = supabase.storage
+            .from("pdfs")
+            .getPublicUrl(file.name);
+
+          return {
+            id: `course-${index}`,
+            name: file.name
+              .replace(".pdf", "")
+              .replace(/[-_]/g, " ")
+              .replace(/\b\w/g, (l: string) => l.toUpperCase()),
+            description: `Learn about ${file.name
+              .replace(".pdf", "")
+              .replace(/[-_]/g, " ")
+              .toLowerCase()} with this comprehensive course material.`,
+            pdfUrl: urlData.publicUrl,
+          };
+        });
+
+        // If no files, show sample courses
+        setCourses(courseList.length > 0 ? courseList : sampleCourses);
+      } catch (error) {
+        console.error("Error connecting to Supabase:", error);
+        setCourses(sampleCourses);
+      }
     };
 
     fetchCourses();

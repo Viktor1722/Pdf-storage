@@ -19,6 +19,20 @@ const createMockClient = () => ({
       getPublicUrl: () => ({ data: { publicUrl: "" } }),
     }),
   },
+  from: () => ({
+    select: () => ({
+      order: () => ({
+        data: null,
+        error: { message: "Supabase not configured - using sample data" },
+      }),
+      eq: () => ({
+        single: () => ({
+          data: null,
+          error: { message: "Supabase not configured - using sample data" },
+        }),
+      }),
+    }),
+  }),
 });
 
 // Validate environment variables and create client

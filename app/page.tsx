@@ -33,7 +33,7 @@ export default function Home() {
         }
 
         // Convert PDF files to courses
-        const courseList = data.map((file: any, index: number) => {
+        const courseList = data.map((file: { name: string }, index: number) => {
           const { data: urlData } = supabase.storage
             .from("pdfs")
             .getPublicUrl(file.name);

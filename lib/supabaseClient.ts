@@ -22,7 +22,9 @@ const createMockClient = () => ({
 });
 
 // Validate environment variables and create client
-let supabase: any;
+let supabase:
+  | ReturnType<typeof createClient>
+  | ReturnType<typeof createMockClient>;
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.warn(
@@ -49,7 +51,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
   try {
     new URL(supabaseUrl);
     supabase = createClient(supabaseUrl, supabaseAnonKey);
-  } catch (error) {
+  } catch {
     console.error(
       `Invalid NEXT_PUBLIC_SUPABASE_URL: "${supabaseUrl}". Must be a valid HTTP or HTTPS URL.`
     );

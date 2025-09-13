@@ -70,6 +70,9 @@ export default function Home() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Курсове</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Формите на обучение който предлагаме са присъствена и дистанционна.
+          </p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Тук можете да намерите всички курсове, които сме разработили за вас.
           </p>
         </div>

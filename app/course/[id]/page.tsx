@@ -238,7 +238,7 @@ export default function CoursePage() {
             <Image
               src="/logo_an respect_bg.png"
               alt="Logo"
-              width={220}
+              width={230}
               height={80}
               className="object-contain cursor-pointer"
               priority

@@ -207,45 +207,46 @@ export default function CoursePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-200">
       {/* Logo in top left */}
-      <div className="absolute top-6 left-6 z-10">
-        <Image
-          src="/logo_an respect_bg.png"
-          alt="Logo"
-          width={220}
-          height={80}
-          className="object-contain cursor-pointer"
-          priority
-          onClick={() => router.push("/")}
-        />
-      </div>
-
       {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <button
-            onClick={() => router.push("/")}
-            className="flex items-center text-blue-600 hover:text-blue-800 font-medium mb-4 transition-colors duration-200 mt-5"
+      <div className="bg-white shadow-sm relative">
+        {/* Back button in far left */}
+        <button
+          onClick={() => router.push("/")}
+          className="absolute left-6 top-1/2 transform -translate-y-1/2 flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 z-10"
+        >
+          <svg
+            className="w-5 h-5 max-[1000px]:mr-0 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            Назад към курсовете
-          </button>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+          <span className="max-[1000px]:hidden">Назад</span>
+        </button>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          {/* Centered logo */}
+          <div className="flex justify-center">
+            <Image
+              src="/logo_an respect_bg.png"
+              alt="Logo"
+              width={220}
+              height={80}
+              className="object-contain cursor-pointer"
+              priority
+              onClick={() => router.push("/")}
+            />
+          </div>
         </div>
       </div>
-
       {/* Course Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">

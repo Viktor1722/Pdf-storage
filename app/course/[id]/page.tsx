@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import Image from "next/image";
 import { supabase, isSupabaseConfigured } from "@/lib/supabaseClient";
 
 interface Course {
@@ -207,12 +208,25 @@ export default function CoursePage() {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      {/* Logo in top left */}
+      <div className="absolute top-6 left-6 z-10">
+        <Image
+          src="/logo_an respect_bg.png"
+          alt="Logo"
+          width={220}
+          height={80}
+          className="object-contain cursor-pointer"
+          priority
+          onClick={() => router.push("/")}
+        />
+      </div>
+
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <button
             onClick={() => router.push("/")}
-            className="flex items-center text-blue-600 hover:text-blue-800 font-medium mb-4 transition-colors duration-200"
+            className="flex items-center text-blue-600 hover:text-blue-800 font-medium mb-4 transition-colors duration-200 mt-5"
           >
             <svg
               className="w-5 h-5 mr-2"

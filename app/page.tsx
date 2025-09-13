@@ -89,10 +89,10 @@ export default function Home() {
                   <div
                     key={course.id}
                     onClick={() => router.push(`/course/${course.id}`)}
-                    className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:scale-105 w-64"
+                    className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:scale-105 w-80"
                   >
-                    <div className="p-8 text-center">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    <div className="p-10 text-center">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         {course.title}
                       </h3>
                       <div className="w-12 h-1 bg-blue-600 mx-auto rounded-full"></div>

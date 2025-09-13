@@ -252,7 +252,7 @@ export default function CoursePage() {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           {/* Course Header */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 px-8 py-12 text-white">
-            <h1 className="text-4xl font-bold mb-4">{course.title}</h1>
+            <h3 className="text-3xl font-bold mb-4">{course.title}</h3>
           </div>
 
           {/* Course Details */}
@@ -419,10 +419,7 @@ export default function CoursePage() {
                           />
                         </svg>
                         <div className="text-left">
-                          <span className="font-medium text-gray-900 block">
-                            {module.title}
-                          </span>
-                          <span className="text-sm text-gray-500">
+                          <span className="text-medium text-gray-900 block">
                             Модул {index + 1}
                           </span>
                         </div>

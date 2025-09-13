@@ -26,7 +26,13 @@ const createMockClient = () => ({
         error: { message: "Supabase not configured - using sample data" },
       }),
       eq: () => ({
+        data: null,
+        error: { message: "Supabase not configured - using sample data" },
         single: () => ({
+          data: null,
+          error: { message: "Supabase not configured - using sample data" },
+        }),
+        order: () => ({
           data: null,
           error: { message: "Supabase not configured - using sample data" },
         }),

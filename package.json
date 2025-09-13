@@ -9,12 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@react-spring/three": "^10.0.2",
+    "@react-three/fiber": "^9.3.0",
+    "@shadergradient/react": "^2.3.2",
     "@supabase/supabase-js": "^2.57.4",
     "dotenv": "^17.2.2",
     "firebase": "^12.2.1",
     "next": "15.5.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -22,6 +26,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.180.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
     "tailwindcss": "^4",

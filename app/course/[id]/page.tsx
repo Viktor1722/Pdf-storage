@@ -236,9 +236,9 @@ export default function CoursePage() {
           {/* Centered logo */}
           <div className="flex justify-center">
             <Image
-              src="/logo_an respect_bg.png"
+              src="/logo_an_respect_bg.png"
               alt="Logo"
-              width={230}
+              width={150}
               height={80}
               className="object-contain cursor-pointer"
               priority

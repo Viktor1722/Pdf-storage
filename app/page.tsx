@@ -57,10 +57,10 @@ export default function Home() {
         {/* Centered Logo */}
         <div className="flex justify-center mb-8">
           <Image
-            src="/logo_an respect_bg.png"
+            src="/logo_an_respect_bg.png"
             alt="Logo"
-            width={320}
-            height={220}
+            width={180}
+            height={120}
             className="object-contain"
             priority
           />

@@ -70,8 +70,11 @@ export default function Home() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Курсове</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Компонент2: Обучения за DI-GI умения и компенетции.
+            Компонент 2: Обучение за DI-GI умения и компетенции. Обученията се
+            предлагат за работещи и безработни лица.
           </p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto"></p>
+          <br />
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             {" "}
             Цифрова компетентност

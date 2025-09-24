@@ -80,8 +80,8 @@ export default function Home() {
             Цифрова компетентност
           </p>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Форми на обучение: Присъствена, Дистанционно, Смесено. Не синхронна
-            дистанционна форма на обучение
+            Форми на обучение: Присъствена, Дистанционно, Смесено. Синхронна и
+            не синхронна дистанционна форма на обучение
           </p>
         </div>
 
@@ -112,6 +112,18 @@ export default function Home() {
                 ))}
               </div>
             )}
+
+            {/* Braingym Login Button */}
+            <div className="flex justify-center mt-8">
+              <a
+                href="https://braingym.digital/login/index.php"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
+              >
+                Запиши се за обучение
+              </a>
+            </div>
           </div>
         </div>
       </div>

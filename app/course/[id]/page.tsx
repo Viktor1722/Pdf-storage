@@ -39,7 +39,7 @@ export default function CoursePage() {
 
       // Check if Supabase is configured
       if (!isSupabaseConfigured()) {
-        setError("Supabase не е конфигуриран");
+        setError("Supabase not configured");
         setLoading(false);
         return;
       }
@@ -54,7 +54,7 @@ export default function CoursePage() {
 
         if (error) {
           console.error("Error fetching course:", error.message);
-          setError("Грешка при зареждане на курса");
+          setError("Error fetching course");
           setLoading(false);
           return;
         }

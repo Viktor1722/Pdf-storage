@@ -114,7 +114,7 @@ export default function Home() {
             )}
 
             {/* Braingym Login Button */}
-            {/* <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-8">
               <a
                 href="https://braingym.digital/login/index.php"
                 target="_blank"
@@ -123,7 +123,7 @@ export default function Home() {
               >
                 Запиши се за обучение
               </a>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
